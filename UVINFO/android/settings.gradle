@@ -1,0 +1,3 @@
+rootProject.name = 'UVINFO'
+
+include ':app'
