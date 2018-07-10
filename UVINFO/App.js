@@ -56,10 +56,12 @@ export default class App extends Component<Props> {
   }
 
   componentDidMount(){
+    // Check the device orientation on load.
     this.DetectOrientation();
   }
 
   DetectOrientation(){
+    // Hide and show webview with chart.
     if(Dimensions.get('window').width > Dimensions.get('window').height)
     {
       this.setState({
