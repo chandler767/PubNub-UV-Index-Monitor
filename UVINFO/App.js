@@ -18,6 +18,7 @@ export default class App extends Component<Props> {
          uvindex: 0,
          uvindexcolor: '#90EE90'
       }
+    // Init PubNub. Use your subscribeKey here.
     this.pubnub = new PubNubReact({
         subscribeKey: 'sub-c-f6b3e9d0-83b9-11e8-ac0f-0e4b9865ddaa'
     });
@@ -25,17 +26,18 @@ export default class App extends Component<Props> {
   }
 
   componentWillMount() {
+    // Subscribe to uvindex channel and get messages.
     this.pubnub.subscribe({
-        channels: ['uvindex'],
-        withPresence: true       
+        channels: ['uvindex']     
     });
-
+    // Update the UV Index label.
     this.pubnub.getMessage('uvindex', (msg) => {
         this.setState({uvindex: msg.message.uvindex})
     });
   }
 
   componentWillUnmount() {
+    // Unubscribe to uvindex channel.
     this.pubnub.unsubscribe({
         channels: ['uvindex']
     });
@@ -43,7 +45,8 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
+      //Display the UV Index
+      <View style={[styles.container, {backgroundColor: this.state.uvindexcolor}]}>
         <Text style={styles.welcome}>UV Index</Text>
         <Text style={styles.uvindex}>{this.state.uvindex}</Text>
       </View>
@@ -56,7 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: {this.state.uvindexcolor},
   },
   welcome: {
     fontSize: 45,
