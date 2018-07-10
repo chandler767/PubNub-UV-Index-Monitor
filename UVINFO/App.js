@@ -18,6 +18,27 @@ export default class App extends Component<Props> {
          uvindex: 0,
          uvindexcolor: '#90EE90'
       }
+    this.pubnub = new PubNubReact({
+        subscribeKey: 'sub-c-f6b3e9d0-83b9-11e8-ac0f-0e4b9865ddaa'
+    });
+    this.pubnub.init(this);
+  }
+
+  componentWillMount() {
+    this.pubnub.subscribe({
+        channels: ['uvindex'],
+        withPresence: true       
+    });
+
+    this.pubnub.getMessage('uvindex', (msg) => {
+        this.setState({uvindex: msg.message.uvindex})
+    });
+  }
+
+  componentWillUnmount() {
+    this.pubnub.unsubscribe({
+        channels: ['uvindex']
+    });
   }
 
   render() {
