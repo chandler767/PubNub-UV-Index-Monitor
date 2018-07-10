@@ -17,7 +17,7 @@ export default class App extends Component<Props> {
     this.state = {
          uvindex: 0,
          uvindexcolor: '#90EE90',
-         hidechart: false,
+         hidewebview: false,
       }
     // Init PubNub. Use your subscribeKey here.
     this.pubnub = new PubNubReact({
@@ -62,15 +62,15 @@ export default class App extends Component<Props> {
   }
 
   DetectOrientation(){
-    // Hide and show webview with chart.
-    if(Dimensions.get('window').width > Dimensions.get('window').height)
+    // Hide and show webview.
+    if(Dimensions.get('window').width > Dimensions.get('window').height) // Landscape - Show webview.
     {
       this.setState({
-        hidechart: true,
+        hidewebview: true,
       });
-    } else {
+    } else { // Portrait - Hide webview.
       this.setState({
-        hidechart: false,
+        hidewebview: false,
       });
     }
   }
@@ -98,7 +98,7 @@ export default class App extends Component<Props> {
         <Text style={styles.welcome}>UV Index</Text>
         <Text style={styles.uvindex}>{this.state.uvindex}</Text>
         {
-          this.state.hidechart ? 
+          this.state.hidewebview ? 
           <View style={styles.webcontainer}>
             <WebView
               style={styles.webview}
