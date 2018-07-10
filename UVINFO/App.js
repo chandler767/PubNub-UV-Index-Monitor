@@ -31,21 +31,22 @@ export default class App extends Component<Props> {
     this.pubnub.subscribe({
         channels: ['uvindex']     
     });
-    // Update the UV Index label and set background color.
+    // Update when a new value is received.
     this.pubnub.getMessage('uvindex', (msg) => {
-        this.setState({uvindex: msg.message.uvindex})
-        if (msg.message.uvindex < 3) { // Low 0-2
-          this.setState({uvindexcolor: '#90EE90'}) // Green
-        } else if ((msg.message.uvindex >= 3) && (msg.message.uvindex < 6)) { // Moderate 3-5
-          this.setState({uvindexcolor: '#FFFF00'}) // Yellow
-        } else if ((msg.message.uvindex >= 6) && (msg.message.uvindex < 8)) { // High 6-7
-          this.setState({uvindexcolor: '#FFBE4D'}) // Orange
-        } else if ((msg.message.uvindex >= 8) && (msg.message.uvindex < 11)) { // Very High 8-10
-          this.setState({uvindexcolor: '#FF9999'}) // Red
-        } else if (msg.message.uvindex >= 11) { // Extreme 11+
-          this.setState({uvindexcolor: '#FF99FF'}) // Purple
-        }
+      this.UpdateUV(msg.message.uvindex)
     });
+    // Get and display last UV Index value.
+    this.pubnub.history(
+      {
+          channel: 'uvindex',
+          count: 1,
+      },
+      function (status, response) {
+        if (status.statusCode == 200) {
+          this.UpdateUV(response.messages[0].entry.uvindex)
+        }
+      }.bind(this)
+    );
   }
 
   componentWillUnmount() {
@@ -72,6 +73,22 @@ export default class App extends Component<Props> {
         hidechart: false,
       });
     }
+  }
+
+  // Update the UV Index label and set background color.
+  UpdateUV(uvindex){
+    this.setState({uvindex: uvindex})
+    if (uvindex < 3) { // Low 0-2
+      this.setState({uvindexcolor: '#90EE90'}); // Green
+    } else if ((uvindex >= 3) && (uvindex < 6)) { // Moderate 3-5
+      this.setState({uvindexcolor: '#FFFF00'}); // Yellow
+    } else if ((uvindex >= 6) && (uvindex < 8)) { // High 6-7
+      this.setState({uvindexcolor: '#FFBE4D'}); // Orange
+    } else if ((uvindex >= 8) && (uvindex < 11)) { // Very High 8-10
+      this.setState({uvindexcolor: '#FF9999'}); // Red
+    } else if (uvindex >= 11) { // Extreme 11+
+      this.setState({uvindexcolor: '#FF99FF'}); // Purple
+    };
   }
 
   render() {
