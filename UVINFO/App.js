@@ -33,15 +33,15 @@ export default class App extends Component<Props> {
     // Update the UV Index label and set background color.
     this.pubnub.getMessage('uvindex', (msg) => {
         this.setState({uvindex: msg.message.uvindex})
-        if (msg.message.uvindex < 3) { // Low 
+        if (msg.message.uvindex < 3) { // Low 0-2
           this.setState({uvindexcolor: '#90EE90'}) // Green
-        } else if ((msg.message.uvindex >= 3) && (msg.message.uvindex < 6)) { // Moderate
+        } else if ((msg.message.uvindex >= 3) && (msg.message.uvindex < 6)) { // Moderate 3-5
           this.setState({uvindexcolor: '#FFFF00'}) // Yellow
-        } else if ((msg.message.uvindex >= 6) && (msg.message.uvindex < 8)) { // High
+        } else if ((msg.message.uvindex >= 6) && (msg.message.uvindex < 8)) { // High 6-7
           this.setState({uvindexcolor: '#FFBE4D'}) // Orange
-        } else if ((msg.message.uvindex >= 8) && (msg.message.uvindex < 11)) { // Very High
+        } else if ((msg.message.uvindex >= 8) && (msg.message.uvindex < 11)) { // Very High 8-10
           this.setState({uvindexcolor: '#FF9999'}) // Red
-        } else if (msg.message.uvindex >= 11) { // Extreme
+        } else if (msg.message.uvindex >= 11) { // Extreme 11+
           this.setState({uvindexcolor: '#FF99FF'}) // Purple
         }
     });
