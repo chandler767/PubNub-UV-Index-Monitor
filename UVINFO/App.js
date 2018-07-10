@@ -13,7 +13,8 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-         uvindex: 0
+         uvindex: 0,
+         uvindexcolor: '#90EE90'
       }
   }
 
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#90EE90',
+    backgroundColor: {this.state.uvindexcolor},
   },
   welcome: {
     fontSize: 45,
