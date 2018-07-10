@@ -5,9 +5,12 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Dimensions, WebView} from 'react-native';
 
 import PubNubReact from 'pubnub-react';
+
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -16,7 +19,8 @@ export default class App extends Component<Props> {
     super(props);
     this.state = {
          uvindex: 0,
-         uvindexcolor: '#90EE90'
+         uvindexcolor: '#90EE90',
+         hidechart: false,
       }
     // Init PubNub. Use your subscribeKey here.
     this.pubnub = new PubNubReact({
@@ -60,6 +64,18 @@ export default class App extends Component<Props> {
       <View style={[styles.container, {backgroundColor: this.state.uvindexcolor}]}>
         <Text style={styles.welcome}>UV Index</Text>
         <Text style={styles.uvindex}>{this.state.uvindex}</Text>
+        {
+          this.state.hidechart ? 
+          <View style={styles.webcontainer}>
+            <WebView
+              style={styles.webview}
+              source={{uri: 'https://uvindex.chandlermayo.com/'}}
+              scalesPageToFit
+              javaScriptEnabled
+              domStorageEnabled
+              startInLoadingState/>
+          </View> : null
+        }
       </View>
     );
   }
@@ -81,5 +97,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 60,
     marginBottom: 15,
+  },
+  webcontainer: {
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    position: 'absolute',
+    alignItems: 'flex-start',
+  },
+  webview: {
+    top: 0,
+    left: 0,
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
   },
 });
