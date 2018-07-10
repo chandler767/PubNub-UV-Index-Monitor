@@ -9,9 +9,6 @@ import {Platform, StyleSheet, Text, View, Dimensions, WebView} from 'react-nativ
 
 import PubNubReact from 'pubnub-react';
 
-const deviceWidth = Dimensions.get('window').width;
-const deviceHeight = Dimensions.get('window').height;
-
 type Props = {};
 export default class App extends Component<Props> {
   
@@ -58,10 +55,27 @@ export default class App extends Component<Props> {
     });
   }
 
+  componentDidMount(){
+    this.DetectOrientation();
+  }
+
+  DetectOrientation(){
+    if(Dimensions.get('window').width > Dimensions.get('window').height)
+    {
+      this.setState({
+        hidechart: true,
+      });
+    } else {
+      this.setState({
+        hidechart: false,
+      });
+    }
+  }
+
   render() {
     return (
       //Display the UV Index
-      <View style={[styles.container, {backgroundColor: this.state.uvindexcolor}]}>
+      <View style={[styles.container, {backgroundColor: this.state.uvindexcolor}]} onLayout={(event) => this.DetectOrientation()}>
         <Text style={styles.welcome}>UV Index</Text>
         <Text style={styles.uvindex}>{this.state.uvindex}</Text>
         {
