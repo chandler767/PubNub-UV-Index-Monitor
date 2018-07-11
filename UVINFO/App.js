@@ -122,14 +122,16 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 45,
-    textAlign: 'center',
     margin: 10,
     paddingTop: 25,
+    color: '#000000',
+
   },
   uvindex: {
-    textAlign: 'center',
-    fontSize: 60,
+    fontSize: 100,
     marginBottom: 15,
+    fontWeight: 'bold',
+    color: '#000000',
   },
   webcontainer: {
     top: 0,
