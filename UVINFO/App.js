@@ -33,7 +33,7 @@ export default class App extends Component<Props> {
     });
     // Update when a new value is received.
     this.pubnub.getMessage('uvindex', (msg) => {
-      this.UpdateUV(msg.message.uvindex)
+      this.UpdateUV(msg.message.eon.uvindex)
     });
     // Get and display last UV Index value.
     this.pubnub.history(
@@ -43,7 +43,7 @@ export default class App extends Component<Props> {
       },
       function (status, response) {
         if (status.statusCode == 200) {
-          this.UpdateUV(response.messages[0].entry.uvindex)
+          this.UpdateUV(response.messages[0].entry.eon.uvindex)
         }
       }.bind(this)
     );
