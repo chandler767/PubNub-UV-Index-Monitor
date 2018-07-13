@@ -43,7 +43,7 @@ void loop() {
     }
     pclient->stop();
 
-    // Alternatively parse the JSON, however only one value is needed and the location of the value is known in the string. No need for another package. 
+    // Alternatively parse the JSON, however only one value is needed and the location of the value is known in the string. No need for another library. 
     uvindex.remove(0, 19); // Remove string before value.
     uvindex = uvindex.substring(0, uvindex.length() - 4); // Remove string after value.
     Serial.print("UV Index:"+uvindex);
