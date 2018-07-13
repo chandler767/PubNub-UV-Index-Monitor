@@ -49,7 +49,30 @@ void loop() {
     Serial.print("UV Index:"+uvindex);
     int uvindexvalue = uvindex.toInt();
 
+    // Set the color of the led based on the UV index.
+    if ((uvindexvalue > 0) && (uvindexvalue < 3)) { // Low 0-2 Green
+        analogWrite(rled, 0);
+        analogWrite(gled, 255);
+        analogWrite(bled, 0);
+    } else if ((uvindexvalue >= 3) && (uvindexvalue < 6)) { // Moderate 3-5 Yellow
+        analogWrite(rled, 255);
+        analogWrite(gled, 255);
+        analogWrite(bled, 0);
+    } else if ((uvindexvalue >= 6) && (uvindexvalue < 8)) { // High 6-7 Orange
+        analogWrite(rled, 255);
+        analogWrite(gled, 120);
+        analogWrite(bled, 0);
+    } else if ((uvindexvalue >= 8) && (uvindexvalue < 11)) { // Very High 8-10 Red
+        analogWrite(rled, 255);
+        analogWrite(gled, 0);
+        analogWrite(bled, 0);
+    } else if (uvindexvalue >= 11) { // Extreme 11+ Purple
+        analogWrite(rled, 85);
+        analogWrite(gled, 0);
+        analogWrite(bled, 85);
+    };
+
     Serial.println();
-    delay(1000);
+    delay(5000);
 }
 
