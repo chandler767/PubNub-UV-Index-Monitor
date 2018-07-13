@@ -10,6 +10,7 @@ int rled = 14; // The PWM pins the LED is attached to.
 int gled = 12;
 int bled = 15;
 
+int uvindexvalue = 0;
 
 void setup() {
     pinMode(rled, OUTPUT);
@@ -30,7 +31,7 @@ void loop() {
     PubNub_BASE_CLIENT *client;
     
     Serial.println("waiting for a message (subscribe)");
-    PubSubClient *pclient = PubNub.subscribe("uvindex"); // Subscrive to the UV index channel for values.
+    PubSubClient *pclient = PubNub.subscribe("uvindex"); // Subscribe to the UV index channel for values.
     if (!pclient) {
         Serial.println("subscription error");
         delay(1000);
@@ -43,9 +44,7 @@ void loop() {
         uvindex = uvindex+String(c); // Append to string.
     }
     pclient->stop();
-
-    int uvindexvalue = 0;
-
+    
     /*
     // Uncomment to get UV index value by parsing JSON using v5 of the ArduinoJSON library.
     uvindex.remove(0, 1); // Remove extra bracket before JSON.
