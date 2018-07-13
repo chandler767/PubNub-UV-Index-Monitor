@@ -29,7 +29,7 @@ void loop() {
     PubNub_BASE_CLIENT *client;
     
     Serial.println("waiting for a message (subscribe)");
-    PubSubClient *pclient = PubNub.subscribe("uvindex");
+    PubSubClient *pclient = PubNub.subscribe("uvindex"); // Subscrive to the UV index channel for values.
     if (!pclient) {
         Serial.println("subscription error");
         delay(1000);
@@ -39,15 +39,14 @@ void loop() {
     while (pclient->wait_for_data()) {
         char c = pclient->read();
         //Serial.print(c);
-        uvindex = uvindex+String(c);
+        uvindex = uvindex+String(c); // Append to string.
     }
     pclient->stop();
 
-    // Alternatively parse the JSON, however only one value is needed and the location of the value is known in the string. No need for another library. 
+    // Alternatively parse the JSON, however only one value is needed and the location of the value is known in the message. No need for another library. 
     if(uvindex.indexOf("uvindex") > 0) { // Ensure the message contains the uvindex (prevents a unexpected message from turning off the led).
-      
-      uvindex.remove(0, 19); // Remove string before value.
-      uvindex = uvindex.substring(0, uvindex.length() - 4); // Remove string after value.
+      uvindex.remove(0, 19); // Remove characters before value.
+      uvindex = uvindex.substring(0, uvindex.length() - 4); // Remove characters after value.
       Serial.print("UV Index:"+uvindex);
       int uvindexvalue = uvindex.toInt();
   
