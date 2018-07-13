@@ -60,7 +60,7 @@ void loop() {
 
     // Comment to parse JSON for UV index value.
     // Get UV index value without parsing JSON. Only one value is needed and the location of the value is known in the message. No need for the ArduinoJSON library. 
-    if(message.indexOf("uvindex") > 0) { // Ensure the message contains the UV iindex (prevents a unexpected message from turning off the led).
+    if(message.indexOf("uvindex") > 0) { // Ensure the message contains the UV index (prevents a unexpected message from turning off the led).
       uvindex = message.substring(19, message.length() - 4).toInt(); // Remove characters before and after value.
     };
     //*/
