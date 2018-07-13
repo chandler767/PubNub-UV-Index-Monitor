@@ -5,11 +5,11 @@
 const static char ssid[] = "Sensor Network";
 const static char pass[] = "sens0rpassw0rd"; 
 
-int sendTimer;   // timer used to control how often messages are published. Sends a new message once every 10 minutes.
-int sensorTimer; // timer used to control how often sensor is checked. Checked every 60 seconds.
+int sendTimer;   // Timer used to control how often messages are published. Sends a new message once every 10 minutes.
+int sensorTimer; // Timer used to control how often sensor is checked. Checked every 60 seconds.
 float sensorValue; // Value from sensor.
 int lastuvindex; // UV index on previous loop.
-int uvindex; // Value from sensor converted to uv index.
+int uvindex; // Value from sensor converted to UV index.
 
 void setup() {
     Serial.begin(9600);
