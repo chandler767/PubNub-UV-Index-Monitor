@@ -44,36 +44,39 @@ void loop() {
     pclient->stop();
 
     // Alternatively parse the JSON, however only one value is needed and the location of the value is known in the string. No need for another library. 
-    uvindex.remove(0, 19); // Remove string before value.
-    uvindex = uvindex.substring(0, uvindex.length() - 4); // Remove string after value.
-    Serial.print("UV Index:"+uvindex);
-    int uvindexvalue = uvindex.toInt();
-
-    // Set the color of the led based on the UV index.
-    if ((uvindexvalue >= 0)  && (uvindexvalue < 1)) { // Off
-        analogWrite(rled, 0);
-        analogWrite(gled, 0);
-        analogWrite(bled, 0);
-    } else if ((uvindexvalue >= 1) && (uvindexvalue < 3)) { // Low 0-2 Green
-        analogWrite(rled, 0);
-        analogWrite(gled, 255);
-        analogWrite(bled, 0);
-    } else if ((uvindexvalue >= 3) && (uvindexvalue < 6)) { // Moderate 3-5 Yellow
-        analogWrite(rled, 255);
-        analogWrite(gled, 255);
-        analogWrite(bled, 0);
-    } else if ((uvindexvalue >= 6) && (uvindexvalue < 8)) { // High 6-7 Orange
-        analogWrite(rled, 255);
-        analogWrite(gled, 120);
-        analogWrite(bled, 0);
-    } else if ((uvindexvalue >= 8) && (uvindexvalue < 11)) { // Very High 8-10 Red
-        analogWrite(rled, 255);
-        analogWrite(gled, 0);
-        analogWrite(bled, 0);
-    } else if (uvindexvalue >= 11) { // Extreme 11+ Purple
-        analogWrite(rled, 85);
-        analogWrite(gled, 0);
-        analogWrite(bled, 85);
+    if(uvindex.indexOf("uvindex") > 0) { // Ensure the message contains the uvindex (prevents a unexpected message from turning off the led).
+      
+      uvindex.remove(0, 19); // Remove string before value.
+      uvindex = uvindex.substring(0, uvindex.length() - 4); // Remove string after value.
+      Serial.print("UV Index:"+uvindex);
+      int uvindexvalue = uvindex.toInt();
+  
+      // Set the color of the led based on the UV index.
+      if ((uvindexvalue >= 0)  && (uvindexvalue < 1)) { // Off
+          analogWrite(rled, 0);
+          analogWrite(gled, 0);
+          analogWrite(bled, 0);
+      } else if ((uvindexvalue >= 1) && (uvindexvalue < 3)) { // Low 0-2 Green
+          analogWrite(rled, 0);
+          analogWrite(gled, 255);
+          analogWrite(bled, 0);
+      } else if ((uvindexvalue >= 3) && (uvindexvalue < 6)) { // Moderate 3-5 Yellow
+          analogWrite(rled, 255);
+          analogWrite(gled, 255);
+          analogWrite(bled, 0);
+      } else if ((uvindexvalue >= 6) && (uvindexvalue < 8)) { // High 6-7 Orange
+          analogWrite(rled, 255);
+          analogWrite(gled, 120);
+          analogWrite(bled, 0);
+      } else if ((uvindexvalue >= 8) && (uvindexvalue < 11)) { // Very High 8-10 Red
+          analogWrite(rled, 255);
+          analogWrite(gled, 0);
+          analogWrite(bled, 0);
+      } else if (uvindexvalue >= 11) { // Extreme 11+ Purple
+          analogWrite(rled, 85);
+          analogWrite(gled, 0);
+          analogWrite(bled, 85);
+      };
     };
 
     Serial.println();
