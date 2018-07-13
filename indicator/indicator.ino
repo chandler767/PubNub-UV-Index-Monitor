@@ -50,7 +50,11 @@ void loop() {
     int uvindexvalue = uvindex.toInt();
 
     // Set the color of the led based on the UV index.
-    if ((uvindexvalue > 0) && (uvindexvalue < 3)) { // Low 0-2 Green
+    if ((uvindexvalue >= 0)  && (uvindexvalue < 1)) { // Off
+        analogWrite(rled, 0);
+        analogWrite(gled, 0);
+        analogWrite(bled, 0);
+    } else if ((uvindexvalue >= 1) && (uvindexvalue < 3)) { // Low 0-2 Green
         analogWrite(rled, 0);
         analogWrite(gled, 255);
         analogWrite(bled, 0);
