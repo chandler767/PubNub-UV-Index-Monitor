@@ -8,9 +8,10 @@ Read the rest of the blog post here: (coming soon).
 
 <img src="https://uvindex.chandlermayo.com/pics/sensor/IMG-6987.JPG" height="200">
 
+
 ## About
 
-This project uses a UV index sensor and a ESP8266 development board to read the current UV index level and publishes the values to [PubNub](https://www.pubnub.com/). A second ESP8266 development board with a RGB LED subscribes to the messages published by the sensor and displays the value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. A ReactNative app for iOS and Android shows the last reported or current UV Index and receives push notifications if the UV index is excessive. Additionally, the app displays a realtime chart of the UV index values powered by [Project EON](https://www.pubnub.com/developers/eon/) and hosted on this repos GitHub Pages site: https://uvindex.chandlermayo.com/
+This project uses a UV index sensor and a ESP8266 development board to read the current UV index level and publishes the values to [PubNub](https://www.pubnub.com/). A second ESP8266 development board with a RGB LED subscribes to the messages published by the sensor and displays the value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. A React Native app for iOS and Android shows the last reported or current UV Index and receives push notifications if the UV index is excessive. Additionally, the app displays a realtime chart of the UV index values powered by [Project EON](https://www.pubnub.com/developers/eon/) and hosted on this repos GitHub Pages site: https://uvindex.chandlermayo.com/
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="300">
 
@@ -36,9 +37,10 @@ This project uses a UV index sensor and a ESP8266 development board to read the 
 
 - RGB LED (common cathode)
 
+
 ## How To Get Started
 
-Want to learn more about this project, how it was built, or get started from scratch? Check out the blog post (coming soon). You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup). Once you sign up, you can get your unique PubNub keys in the [PubNub Developer Portal](https://admin.pubnub.com/).
+Want to learn more about this project, how it was built, or get started from scratch? Check out the blog post (coming soon). You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup). Once you sign up, you can get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/).
 
 ### Setting Up The UV Index Sensor and UV Index Indicator
 
@@ -59,7 +61,7 @@ Want to learn more about this project, how it was built, or get started from scr
 
 #### UV Index Sensor
 
-<img align="right" src="https://raw.githubusercontent.com/chandler767/PubNub-UV-Index-Monitor/gh-pages/pics/sensor/IMG-6992.JPG" height="250">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/sensor/IMG-6992.JPG" height="250">
 
 The UV index sensor reads the current UV index levels one per minute and publishes the values to PubNub when the value changes and at least once every 10 minutes.
 
@@ -71,10 +73,10 @@ The UV index sensor reads the current UV index levels one per minute and publish
 
 4. Replace "Sensor Network" and "sens0rpassw0rd" with the SSID and password for your WiFi network.
 
-5. Get your unique PubNub keys in the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "pub-key" and "sub-key" with your keys.
+5. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "pub-key" and "sub-key" with your keys.
 
 6. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and publish your sensor readings to PubNub.
-<img align="right" src="https://raw.githubusercontent.com/chandler767/PubNub-UV-Index-Monitor/gh-pages/pics/pubnub/debug_client.png" height="250">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/pubnub/debug_client.png" height="250">
 
 7. Verify the sensor readings are making it to PubNub by going to your [PubNub Developer Portal](https://admin.pubnub.com/), select the keys your created previously, and create a client in the Debug Console. Set the 'Default Channel' to 'uvindex' and leave the other fields blank. Click 'ADD CLIENT'. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the development board to force it to resend the current UV index value.
 
@@ -92,13 +94,15 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv i
 
 3. Replace "Sensor Network" and "sens0rpassw0rd" with the SSID and password for your WiFi network.
 
-4. Get your unique PubNub keys in the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "pub-key" and "sub-key" with your keys.
+4. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "sub-key" with your key.
 
 5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and recive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
 
 #### GitHub Pages Dashboard
 
-The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/) and show the last five values from the UV index sensor. Check out the dashboard here: https://uvindex.chandlermayo.com/
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
+
+The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/) and show the last five values from the UV index sensor. To setup your own dashboard you'll need to fork this repo and setup a new gh-pages site. The dashboard for this repo is located here: https://uvindex.chandlermayo.com/ 
 
 1. Fork this repo and clone.
 
@@ -119,9 +123,32 @@ git push origin gh-pages
 
 6. Learn more about how to setup a GitHub Pages site [here.](https://help.github.com/categories/github-pages-basics/)
 
-#### ReactNative App
+#### UVINFO React Native App
+
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="350">
+
+1. [Install React Native](https://facebook.github.io/react-native/docs/getting-started.html). Be sure to follow the guide for 'Building Projects with Native Code' to be able to install on a device. 
+
+2. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. 
+
+3. Edit UVINFO/App.js and replace "sub-key" with your key and replace 'https://uvindex.chandlermayo.com/' with the url for your dashboard. Save the file.
+
+4. Make sure you're in the UVINFO directory.
+```
+cd UVINFO
+```
+
+5. Install project dependencies.
+```
+npm install  --save
+```
+
+6a. Test the app in the iOS simulator. It may take some time to build the project.
+```
+react-native run-ios
+```
+
+6b. [Follow this guide](https://facebook.github.io/react-native/docs/running-on-device.html) to install on your device (iOS or Android).
 
 
 
-
-More coming soon.
