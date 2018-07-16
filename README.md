@@ -1,6 +1,6 @@
 # UV Index Monitor Powered By [PubNub](https://www.pubnub.com/)
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="400">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="475">
 
 Sunburns are really bad. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly douples your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protecton when you go outside to mitigate the damage to your skin. Unfortuately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade? What if you had a way to reliably know the current UV index at a glance?
 
@@ -11,19 +11,19 @@ Read the rest of the blog post here: (coming soon).
 
 ## About
 
-This project uses a UV index sensor and a ESP8266 development board to read the current UV index level and publishes the values to [PubNub](https://www.pubnub.com/). A second ESP8266 development board with a RGB LED subscribes to the messages published by the sensor and displays the value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. A React Native app for iOS and Android shows the last reported or current UV Index and receives push notifications if the UV index is excessive. Additionally, the app displays a realtime chart of the UV index values powered by [Project EON](https://www.pubnub.com/developers/eon/) and hosted on this repos GitHub Pages site: https://uvindex.chandlermayo.com/
+This project uses a UV index sensor and a ESP8266 development board to read the current UV index level and then publishes the UV index values to [PubNub](https://www.pubnub.com/). A second ESP8266 development board with a RGB LED subscribes to the messages published by the sensor and displays the value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. A React Native app for iOS and Android shows the last reported or current UV index and the app receives push notifications if the UV index is excessive. Additionally, the app displays a realtime chart of the UV index values powered by [Project EON](https://www.pubnub.com/developers/eon/) and hosted on the [GitHub Pages site](https://uvindex.chandlermayo.com/) for this repo.
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="250">
 
 ### PubNub Features 
 
-- [PubNub React V4 SDK](https://www.pubnub.com/docs/react-native-javascript/pubnub-javascript-sdk) - Publish, subscribe, and history.
+- [PubNub React V4 SDK](https://www.pubnub.com/docs/react-native-javascript/pubnub-javascript-sdk) - Publish, subscribe, and history in React Native.
 
 - [PubNub Arduino SDK](https://www.pubnub.com/docs/arduino/pubnub-arduino-sdk) - Publish and subscribe with ESP8266.
 
-- [PubNub Push Notifications](https://www.pubnub.com/developers/tech/push-notifications/) - APNS and GCM push notifications.
+- [PubNub Push Notifications](https://www.pubnub.com/developers/tech/push-notifications/) - APNS and GCM push notifications with React Naive.
 
-- [Project EON](https://www.pubnub.com/developers/eon/) - Realtime data visualization.
+- [Project EON](https://www.pubnub.com/developers/eon/) - Realtime data visualization for UV index.
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="200">
 
@@ -42,7 +42,7 @@ This project uses a UV index sensor and a ESP8266 development board to read the 
 
 Want to learn more about this project, how it was built, or get started from scratch? Check out the blog post (coming soon). You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup). Once you sign up, you can get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/).
 
-### Setting Up The UV Index Sensor and UV Index Indicator
+### Setup UV Index Sensor and UV Index Indicator
 
 1. Download the latest [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
@@ -98,7 +98,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv i
 
 5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and recive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
 
-#### GitHub Pages Dashboard
+### Setup GitHub Pages Dashboard
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
 
@@ -123,9 +123,9 @@ git push origin gh-pages
 
 6. Learn more about how to setup a GitHub Pages site [here.](https://help.github.com/categories/github-pages-basics/)
 
-#### UVINFO React Native App
+### Setup UVINFO React Native App
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="350">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="475">
 
 1. [Install React Native](https://facebook.github.io/react-native/docs/getting-started.html). Be sure to follow the guide for 'Building Projects with Native Code' to be able to install on a device. 
 
