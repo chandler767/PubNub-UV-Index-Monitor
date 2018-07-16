@@ -96,7 +96,32 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv i
 
 5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and recive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
 
+#### GitHub Pages Dashboard
+
+The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/) and show the last five values from the UV index sensor. Check out the dashboard here: https://uvindex.chandlermayo.com/
+
+1. Fork this repo and clone.
+
+2. Switch to the gh-pages branch.
+```
+git checkout gh-pages
+```
+
+3. Edit index.html and replace the subscribe key with the key from your [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free.
+
+4. Commit to the gh-pages branch to update your subscribe key and trigger a page build:
+```
+git add index.html
+git push origin gh-pages
+```
+
+5. Your copy of the dashboard should now be online.
+
+6. Learn more about how to setup a GitHub Pages site [here.](https://help.github.com/categories/github-pages-basics/)
+
 #### ReactNative App
+
+
 
 
 More coming soon.
