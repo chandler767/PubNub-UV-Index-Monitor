@@ -15,7 +15,7 @@ Read the rest of the blog post here: (coming soon).
 - ReactNative app that displays current UV index and when the app is turned landscape the UV index graph from GitHub Pages is displayed.
 - Push notifications (coming soon).
 
-<img src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="200">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="300">
 
 ### PubNub Features
 - [PubNub React V4 SDK](https://www.pubnub.com/docs/react-native-javascript/pubnub-javascript-sdk) - Publish, subscribe, and history.
@@ -23,7 +23,7 @@ Read the rest of the blog post here: (coming soon).
 - [PubNub Push Notifications](https://www.pubnub.com/developers/tech/push-notifications/) - APNS and GCM push notifications.
 - [Project EON](https://www.pubnub.com/developers/eon/) - Open-source charts.
 
-<img src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="300">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="200">
 
 ### Hardware Used for Sensor and Indicator 
 - [ESP8266 ESP-12E NodeMcu Development Board](https://www.amazon.com/HiLetgo-Internet-Development-Wireless-Micropython/dp/B010N1SPRK/)
@@ -42,9 +42,19 @@ You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.c
 ```
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ```
-4. Navigate to the Board Manager by going to Tools > Boards > Boards Manager. There should be a couple new entries in addition to the standard Arduino boards. Search for esp8266. Click on that entry, then select Install.
-5. Connect your ESP8266 Development board and select it by going to Tools > Boards menu. 
+4. Navigate to the Board Manager by going to Tools > Boards > Boards Manager. Search for ESP8266. Click on that entry, then select Install.
+5. Connect your ESP8266 Development board and select it by going to Tools > Boards menu. You may need to select the correct port.
 6. Verify that everything works by uploading the blink sketch.
-7. Install the PubNub Arduino SDK by going to Sketch > Include Library > Manage Libraries. Search for PubNub. Click on that entry, then select Install
+7. Install the PubNub Arduino SDK by going to Sketch > Include Library > Manage Libraries. Search for PubNub. Click on that entry, then select Install.
+#### UV Index Sensor
+The UV index sensor reads the current UV index levels one per minute and publishes the values to PubNub when the value changes and at least once every 10 minutes.
+
+1. Connect the positive pin of the UV sensor to a 3.3v pin on your development board and connect the ground pin of the UV sensor to a ground pin on your development board. Connect the output of the UV sensor to the analog input on your development board (A0).
+2. Test the sensor by going to File > Examples > 01.Basics > AnalogReadSerial. Upload the sketch and check the Serial Monitor for values.
+3. Open sensor/sensor.ino in Arduino.
+4. Replace "Sensor Network" and "sens0rpassw0rd" with the SSID and password for your WiFi network.
+5. Get your unique PubNub keys in the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "pub-key" and "sub-key" with your keys.
+6. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and publish your sensor readings to PubNub.
+7. Verify the sensor readings are making it to PubNub by going to your [PubNub Developer Portal](https://admin.pubnub.com/), select the keys your created previously, and create a client in the Debug Console. Set the 'Default Channel' to 'uvindex' and leave the other fields blank. Click 'ADD CLIENT'. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the development board to force it to resend the current UV index value. 
 
 More coming soon.
