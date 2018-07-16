@@ -150,5 +150,7 @@ react-native run-ios
 
 6b. [Follow this guide](https://facebook.github.io/react-native/docs/running-on-device.html) to install on your device (iOS or Android).
 
+7. Push notifications are coming soon!
+
 
 
