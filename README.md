@@ -143,14 +143,14 @@ cd UVINFO
 npm install  --save
 ```
 
-6a. Test the app in the iOS simulator. It may take some time to build the project.
+6. Test the app in the iOS simulator. It may take some time to build the project.
 ```
 react-native run-ios
 ```
 
-6b. [Follow this guide](https://facebook.github.io/react-native/docs/running-on-device.html) to install on your device (iOS or Android).
+7. [Follow this guide](https://facebook.github.io/react-native/docs/running-on-device.html) to install on your device (iOS or Android).
 
-7. Push notifications are coming soon!
+8. Push notifications are coming soon!
 
 
 
