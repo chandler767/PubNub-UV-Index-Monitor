@@ -68,7 +68,6 @@ void loop() {
       else if (sensorValue >= 240) {
         uvindex = 11;
       }
-      
       if ((lastuvindex != uvindex) || (sendTimer == 0)) { // Send a new message if sendTimer was reset or if UV index has changed.
         lastuvindex = uvindex; // Save the UV index.
         PubNub_BASE_CLIENT *client;
@@ -89,8 +88,7 @@ void loop() {
         }
         client->stop();
         Serial.println();
-      }
-        
+      } 
     }
     delay(1000);
 }
