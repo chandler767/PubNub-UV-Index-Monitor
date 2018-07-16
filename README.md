@@ -24,7 +24,7 @@ This project uses a UV index sensor and a ESP8266 development board to read the 
 
 - [Project EON](https://www.pubnub.com/developers/eon/) - Realtime data visualization.
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="180">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="200">
 
 ### Hardware
 
@@ -55,7 +55,7 @@ Want to learn more about this project, how it was built, or get started from scr
 
 6. Verify that everything works by uploading the blink sketch. The built-in led should be blinking.
 
-7. Install the PubNub Arduino SDK by going to Sketch > Include Library > Manage Libraries. Search for PubNub. Click on that entry, then select Install.
+7. Install the [PubNub Arduino SDK](https://www.pubnub.com/docs/arduino/pubnub-arduino-sdk) by going to Sketch > Include Library > Manage Libraries. Search for PubNub. Click on that entry, then select Install.
 
 #### UV Index Sensor
 
@@ -67,7 +67,7 @@ The UV index sensor reads the current UV index levels one per minute and publish
 
 2. Test the sensor by going to File > Examples > 01.Basics > AnalogReadSerial. Upload the sketch and check the Serial Monitor for values.
 
-3. Open sensor/sensor.ino in Arduino.
+3. Open [sensor/sensor.ino](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/master/sensor) in Arduino.
 
 4. Replace "Sensor Network" and "sens0rpassw0rd" with the SSID and password for your WiFi network.
 
@@ -84,6 +84,19 @@ The UV index sensor reads the current UV index levels one per minute and publish
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-6999.JPG" height="200">
 
-The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv index value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. 
+The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv index value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple.
+
+1. Connect the common ground on the RGB LED to ground on your development board. Connect the red pin to pin 14, green pin to pin 12, and blue pin to pin 15.
+
+2. Open [indicator/indicator.ino](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/master/indicator) in Arduino.
+
+3. Replace "Sensor Network" and "sens0rpassw0rd" with the SSID and password for your WiFi network.
+
+4. Get your unique PubNub keys in the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "pub-key" and "sub-key" with your keys.
+
+5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and recive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
+
+#### ReactNative App
+
 
 More coming soon.
