@@ -21,7 +21,7 @@ export default class App extends Component<Props> {
       }
     // Init PubNub. Use your subscribeKey here.
     this.pubnub = new PubNubReact({
-        subscribeKey: 'sub-c-f6b3e9d0-83b9-11e8-ac0f-0e4b9865ddaa'
+        subscribeKey: 'sub-key'
     });
     this.pubnub.init(this);
   }
