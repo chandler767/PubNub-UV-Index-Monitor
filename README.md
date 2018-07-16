@@ -13,7 +13,7 @@ Read the rest of the blog post here: (coming soon).
 
 This project uses a UV index sensor and a ESP8266 development board to read the current UV index level and publishes the values to [PubNub](https://www.pubnub.com/). A second ESP8266 development board with a RGB LED subscribes to the messages published by the sensor and displays the value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. A React Native app for iOS and Android shows the last reported or current UV Index and receives push notifications if the UV index is excessive. Additionally, the app displays a realtime chart of the UV index values powered by [Project EON](https://www.pubnub.com/developers/eon/) and hosted on this repos GitHub Pages site: https://uvindex.chandlermayo.com/
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="300">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="250">
 
 ### PubNub Features 
 
@@ -102,7 +102,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv i
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
 
-The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/) and show the last five values from the UV index sensor. To setup your own dashboard you'll need to fork this repo and setup a new gh-pages site. The dashboard for this repo is located here: https://uvindex.chandlermayo.com/ 
+The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/) and shows the last five values from the UV index sensor. To setup your own dashboard you'll need to fork this repo and setup a new gh-pages site. The dashboard for this repo is located here: https://uvindex.chandlermayo.com/ 
 
 1. Fork this repo and clone.
 
