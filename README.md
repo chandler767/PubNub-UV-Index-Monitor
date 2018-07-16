@@ -2,7 +2,7 @@
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="475">
 
-Sunburns are really bad. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly douples your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protecton when you go outside to mitigate the damage to your skin. Unfortuately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade? What if you had a way to reliably know the current UV index at a glance?
+Sunburns are really bad. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly doubles your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protection when you go outside to mitigate the damage to your skin. Unfortunately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade? What if you had a way to reliably know the current UV index at a glance?
 
 Read the rest of the blog post here: (coming soon).
 
@@ -96,7 +96,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv i
 
 4. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup) for free. Replace "sub-key" with your key.
 
-5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and recive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
+5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and receive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
 
 ### Setup GitHub Pages Dashboard
 
