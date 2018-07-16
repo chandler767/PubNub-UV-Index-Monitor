@@ -16,7 +16,7 @@ void setup() {
     WiFi.begin(ssid, pass);
     if(WiFi.waitForConnectResult() == WL_CONNECTED){
       Serial.println("WiFi connected.");
-      PubNub.begin("pub-c-55f69e96-38f2-4f39-9271-084022b8327e", "sub-c-f6b3e9d0-83b9-11e8-ac0f-0e4b9865ddaa");
+      PubNub.begin("pub-key", "sub-key");
     } else {
       Serial.println("Couldn't get a wifi connection.");
       while(1) delay(100);
