@@ -59,6 +59,8 @@ Want to learn more about this project, how it was built, or get started from scr
 
 7. Install the [PubNub Arduino SDK](https://www.pubnub.com/docs/arduino/pubnub-arduino-sdk/?devrel_gh=PubNub-UV-Index-Monitor ) by going to Sketch > Include Library > Manage Libraries. Search for PubNub. Click on that entry, then select Install.
 
+8. You can test the ability for your ESP8266 Development board to connect to PubNub by uploading [this gist](https://gist.github.com/chandler767/472a93fac406af096d00c8377aa3fb17) to your development board with the Arduino IDE. Replace "your-ssid" and "your-password" with the SSID and password for your WiFi network. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor ). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor) for free. Replace "pub-key" and "sub-key" with your keys.
+
 #### UV Index Sensor
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/sensor/IMG-6992.JPG" height="250">
@@ -86,7 +88,7 @@ The UV index sensor reads the current UV index levels one per minute and publish
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-6999.JPG" height="200">
 
-The UV Index Indicator subscribes to the 'uvindex' channel and displays the uv index value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple.
+The UV Index Indicator subscribes to the 'uvindex' channel and displays the UV index value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple.
 
 1. Connect the common ground on the RGB LED to ground on your development board. Connect the red pin to pin 14, green pin to pin 12, and blue pin to pin 15.
 
@@ -131,7 +133,7 @@ git push origin gh-pages
 
 2. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor) for free. 
 
-3. Edit UVINFO/App.js and replace "sub-key" with your key and replace 'https://uvindex.chandlermayo.com/' with the url for your dashboard. Save the file.
+3. Edit [UVINFO/App.js](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/master/UVINFO) and replace "sub-key" with your key and replace 'https://uvindex.chandlermayo.com/' with the url for your dashboard. Save the file.
 
 4. Make sure you're in the UVINFO directory.
 ```
