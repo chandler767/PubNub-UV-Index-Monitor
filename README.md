@@ -1,6 +1,6 @@
 # UV Index Monitor Powered By [PubNub](https://www.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor )
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="370">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="330">
 
 Sunburns are terrible for you. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly doubles your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protection when you go outside to mitigate the damage to your skin. Unfortunately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade?
 
@@ -100,7 +100,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the UV i
 
 5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and receive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value after a 60 second delay.
 
-### Setup GitHub Pages Dashboard
+### Setup Dashboard
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
 
@@ -125,7 +125,9 @@ git push origin gh-pages
 
 ### Setup UVINFO React Native App
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="370">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="330">
+
+When the app is first opened it retrieves the last UV index value and displays that value so the user doesn't have to wait for the sensor to send a new message. Then each time the UV index is updated the app should refresh to display the new value. The app also displays the dashboard chart when the app is in landscape.
 
 1. [Install React Native](https://facebook.github.io/react-native/docs/getting-started.html). Be sure to follow the guide for 'Building Projects with Native Code' to be able to install on a device. 
 
