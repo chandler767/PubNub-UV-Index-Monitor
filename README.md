@@ -104,7 +104,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the UV i
 
 <img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
 
-The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/?devrel_gh=PubNub-UV-Index-Monitor) and shows the last five values from the UV index sensor. To setup your own dashboard you'll need to fork this repo and setup a new gh-pages site. The dashboard for this repo is located here: https://uvindex.chandlermayo.com/ 
+The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/?devrel_gh=PubNub-UV-Index-Monitor) and shows the last five values from the UV index sensor. To setup your own dashboard you'll need to fork this repo and setup a new gh-pages site. Alternatively, you can host [index.html](https://github.com/chandler767/PubNub-UV-Index-Monitor/blob/gh-pages/index.html) in another location and follow step 3 below to configure. The dashboard for this repo is located here: https://uvindex.chandlermayo.com/ 
 
 1. Fork this repo and clone.
 
@@ -113,7 +113,7 @@ The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/
 git checkout gh-pages
 ```
 
-3. Edit index.html and replace the subscribe key with the key from your [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor) for free.
+3. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor ). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor) for free. Edit index.html and replace the subscribe key with your key.
 
 4. Commit to the gh-pages branch to update your subscribe key and trigger a page build:
 ```
@@ -121,9 +121,7 @@ git add index.html
 git push origin gh-pages
 ```
 
-5. Your copy of the dashboard should now be online.
-
-6. Learn more about how to setup a GitHub Pages site [here.](https://help.github.com/categories/github-pages-basics/)
+5. Your copy of the dashboard should now be online. Learn more about how to setup a GitHub Pages site [here.](https://help.github.com/categories/github-pages-basics/)
 
 ### Setup UVINFO React Native App
 
