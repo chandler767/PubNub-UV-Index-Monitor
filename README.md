@@ -142,7 +142,7 @@ cd UVINFO
 
 5. Install project dependencies.
 ```
-npm install  --save
+npm install
 ```
 
 6. Test the app in the iOS simulator. It may take some time to build the project.

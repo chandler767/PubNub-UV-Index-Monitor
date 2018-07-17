@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Dimensions, WebView} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, WebView} from 'react-native';
 
 import PubNubReact from 'pubnub-react';
 
