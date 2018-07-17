@@ -98,7 +98,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the UV i
 
 4. Get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor ). If you don't have a PubNub account, you can [sign up for a PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor) for free. Replace "sub-key" with your key.
 
-5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and receive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value.
+5. Upload the sketch. You can use the Serial Monitor to verify you're able to connect to WiFi and receive your sensor readings from PubNub. You should see a message with the current UV index within 10 minutes or if the sensor reading changes. You can also reset the sensor development board to force it to resend the current UV index value after a 60 second delay.
 
 ### Setup GitHub Pages Dashboard
 
