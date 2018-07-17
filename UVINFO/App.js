@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
     margin: 10,
     paddingTop: 25,
     color: '#000000',
-
   },
   uvindex: {
     fontSize: 100,
