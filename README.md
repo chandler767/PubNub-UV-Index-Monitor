@@ -1,12 +1,12 @@
 # UV Index Monitor Powered By [PubNub](https://www.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor )
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="475">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="400">
 
-Sunburns are really bad. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly doubles your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protection when you go outside to mitigate the damage to your skin. Unfortunately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade? What if you had a way to reliably know the current UV index at a glance?
+Sunburns are terrible for you. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly doubles your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protection when you go outside to mitigate the damage to your skin. Unfortunately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade?
 
 Read the rest of the blog post here: (coming soon).
 
-<img src="https://uvindex.chandlermayo.com/pics/sensor/IMG-6987.JPG" height="200">
+<img src="https://uvindex.chandlermayo.com/pics/pubnub/pubnub.png" width="450">
 
 
 ## About
@@ -127,7 +127,7 @@ git push origin gh-pages
 
 ### Setup UVINFO React Native App
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="475">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="400">
 
 1. [Install React Native](https://facebook.github.io/react-native/docs/getting-started.html). Be sure to follow the guide for 'Building Projects with Native Code' to be able to install on a device. 
 
