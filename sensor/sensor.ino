@@ -70,6 +70,7 @@ void loop() {
       }
       if ((lastuvindex != uvindex) || (sendTimer == 0)) { // Send a new message if sendTimer was reset or if UV index has changed.
         lastuvindex = uvindex; // Save the UV index.
+        sendTimer = 0; // Reset timer.
         PubNub_BASE_CLIENT *client;
         Serial.println("publishing a message");
         char msg[64] = "{\"eon\":{\"uvindex\":"; 
