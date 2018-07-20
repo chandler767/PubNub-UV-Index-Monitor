@@ -160,9 +160,10 @@ react-native run-ios
 
 3. Enter project details and press the continue button.
 
-4. Go to your[PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor) and enable Mobile Push Notifications. Enter your API key from the project your created in the [Firebase console](https://firebase.google.com/console).
+4. Go to your [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor) and enable Mobile Push Notifications. Enter your API key from the project you created in the [Firebase console](https://firebase.google.com/console).
 
-5. Using the [Android push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-android) follow the steps above and build for an Android device. You will receive a push notification when the UV index is very high (>7) and a maximum of once every 15 hours. 
+5. Using the [Android push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-android) follow the 'Setup UVINFO React Native App' instructions above and run the app in the Android Emulator or on a device to test push notifications. You will receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours. 
 
+### iOS Push Notifications
 
-
+Coming soon.
