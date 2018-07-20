@@ -152,7 +152,17 @@ react-native run-ios
 
 7. [Follow this guide](https://facebook.github.io/react-native/docs/running-on-device.html) to install on your device (iOS or Android).
 
-8. Push notifications are coming soon!
+### Android Push Notifications
+
+1. Visit the [Firebase console](https://firebase.google.com/console).
+
+2. Click the Add project box.
+
+3. Enter project details and press the continue button.
+
+4. Go to your[PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor) and enable Mobile Push Notifications. Enter your API key from the project your created in the [Firebase console](https://firebase.google.com/console).
+
+5. Using the [Android push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-android) follow the steps above and build for an Android device. You will receive a push notification when the UV index is very high (>7) and a maximum of once every 15 hours. 
 
 
 
