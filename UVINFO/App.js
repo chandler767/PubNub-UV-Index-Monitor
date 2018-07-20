@@ -52,16 +52,16 @@ export default class App extends Component<Props> {
 
     // Get token and subscribe for push notifications. 
     RNFirebase.messaging().getToken().then(fcmToken => {
-    if (fcmToken) {
-      // console.log(fcmToken)
-      this.pubnub.push.addChannels(
-      {
-          channels: ['uvindex'],
-          device: fcmToken,
-          pushGateway: 'gcm' // apns, gcm, mpns
-      });
-    } 
-  });
+      if (fcmToken) {
+        // console.log(fcmToken)
+        this.pubnub.push.addChannels(
+        {
+            channels: ['uvindex'],
+            device: fcmToken,
+            pushGateway: 'gcm' // apns, gcm, mpns
+        });
+      } 
+    });
   }
 
   componentWillUnmount() {
@@ -79,7 +79,6 @@ export default class App extends Component<Props> {
 
     // Get refreshed token and subscribe for push notifications. 
     this.onTokenRefreshListener = RNFirebase.messaging().onTokenRefresh(fcmToken => {
-      // Subscribe for push notifications. 
       // console.log(fcmToken)
       this.pubnub.push.addChannels(
       {
