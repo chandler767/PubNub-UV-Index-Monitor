@@ -9,6 +9,8 @@ import {StyleSheet, Text, View, Dimensions, WebView} from 'react-native';
 
 import PubNubReact from 'pubnub-react';
 
+import RNFirebase from 'react-native-firebase';
+
 type Props = {};
 export default class App extends Component<Props> {
   
@@ -47,6 +49,19 @@ export default class App extends Component<Props> {
         }
       }.bind(this)
     );
+
+    // Get token and subscribe for push notifications. 
+    RNFirebase.messaging().getToken().then(fcmToken => {
+    if (fcmToken) {
+      // console.log(fcmToken)
+      this.pubnub.push.addChannels(
+      {
+          channels: ['uvindex'],
+          device: fcmToken,
+          pushGateway: 'gcm' // apns, gcm, mpns
+      });
+    } 
+  });
   }
 
   componentWillUnmount() {
@@ -54,11 +69,25 @@ export default class App extends Component<Props> {
     this.pubnub.unsubscribe({
         channels: ['uvindex']
     });
+
+    this.onTokenRefreshListener();
   }
 
   componentDidMount(){
     // Check the device orientation on load.
     this.DetectOrientation();
+
+    // Get refreshed token and subscribe for push notifications. 
+    this.onTokenRefreshListener = RNFirebase.messaging().onTokenRefresh(fcmToken => {
+      // Subscribe for push notifications. 
+      // console.log(fcmToken)
+      this.pubnub.push.addChannels(
+      {
+          channels: ['uvindex'],
+          device: fcmToken,
+          pushGateway: 'gcm' // apns, gcm, mpns
+      });    
+    });
   }
 
   DetectOrientation(){
