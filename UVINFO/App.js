@@ -1,5 +1,5 @@
 /**
- * UV Index
+ * UV Info App
  * https://github.com/chandler767/PubNub-UV-Index-Monitor
  *
  */
