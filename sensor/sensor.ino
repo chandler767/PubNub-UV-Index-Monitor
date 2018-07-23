@@ -7,6 +7,7 @@ const static char pass[] = "sens0rpassw0rd";
 
 int sendTimer;   // Timer used to control how often messages are published. Sends a new message once every 10 minutes.
 int sensorTimer; // Timer used to control how often sensor is checked. Checked every 60 seconds.
+int alertTimer; // Timer used to control how often a push notification can be sent.
 float sensorValue; // Value from sensor.
 int lastuvindex; // UV index on previous loop.
 int uvindex; // Value from sensor converted to UV index.
@@ -75,7 +76,16 @@ void loop() {
         Serial.println("publishing a message");
         char msg[64] = "{\"eon\":{\"uvindex\":"; 
         sprintf(msg + strlen(msg), "%d", uvindex);
-        strcat(msg, "}}");
+        if ((uvindex > 7) && (alertTimer == 0)) { // Send a push notification if the UV index is very high and no notification has been sent in the last 15 hours.
+          alertTimer = 900; // Wait 15 hours before sending another push notification. 
+          strcat(msg, "},\"pn_gcm\":{\"notification\":{\"body\":\"The UV index is very high. Avoid the sun.\"}}}");
+        } 
+        else {
+          if (alertTimer > 0) {
+            alertTimer = (alertTimer = 1); // Remove a minute from the alertTimer.
+          }
+          strcat(msg, "}}");
+        }
         client = PubNub.publish("uvindex", msg);
         if (!client) {
             Serial.println("publishing error");
@@ -93,4 +103,3 @@ void loop() {
     }
     delay(1000);
 }
-
