@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Dimensions, WebView} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, WebView, PushNotificationIOS} from 'react-native';
 
 import PubNubReact from 'pubnub-react';
 
@@ -47,6 +47,17 @@ export default class App extends Component<Props> {
         }
       }.bind(this)
     );
+     // Get token and subscribe for push notifications. 
+    PushNotificationIOS.addEventListener('register', function(token){
+      //console.log('You are registered and the device token is: ',token)
+      this.pubnub.push.addChannels(
+      {
+        channels: ['uvindex'],
+        device: token,
+        pushGateway: 'apns'
+      });
+    }.bind(this)); 
+    PushNotificationIOS.requestPermissions();
   }
 
   componentWillUnmount() {
