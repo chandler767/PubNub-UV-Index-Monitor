@@ -152,7 +152,25 @@ react-native run-ios
 
 7. [Follow this guide](https://facebook.github.io/react-native/docs/running-on-device.html) to install on your device (iOS or Android).
 
+### iOS Push Notifications
+
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-7038.png" height="300">
+
+Bridge native PubNub publishing with Apple Push Notification Service for iOS push notifications with React Native. Requires paid enrollment in the [Apple Developer Program](https://developer.apple.com/programs/). Receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours.
+
+1. Using the [iOS push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-ios) follow the 'UV Index Sensor' instructions above.
+
+2. Using the [iOS push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-ios) follow the 'Setup UVINFO React Native App' instructions above.
+
+3. Provision [APNS and PubNub with tokens](https://www.pubnub.com/docs/web-javascript/mobile-gateway#apns-prerequisites-tokens?devrel_gh=PubNub-UV-Index-Monitor).
+
+4. [Manually link](https://facebook.github.io/react-native/docs/pushnotificationios.html) the PushNotificationIOS library.
+
+5. Install the app on a iOS device to test push notifications.
+
 ### Android Push Notifications
+
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1532055107.png" height="300">
 
 Bridge native PubNub publishing with Firebase Cloud Messaging for Android push notifications with React Native. Receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours.
 
@@ -169,18 +187,3 @@ Bridge native PubNub publishing with Firebase Cloud Messaging for Android push n
 6. Go to your [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor) and enable Mobile Push Notifications for the key you created for setting up the app. Enter your API key from the project you created in the [Firebase console](https://firebase.google.com/console).
 
 7. Run the app in the Android Emulator or on a device to test push notifications.
-
-### iOS Push Notifications
-
-Bridge native PubNub publishing with Apple Push Notification Service for iOS push notifications with React Native. Requires paid enrollment in the [Apple Developer Program](https://developer.apple.com/programs/). Receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours.
-
-1. Using the [iOS push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-ios) follow the 'UV Index Sensor' instructions above.
-
-2. Using the [iOS push notification enabled fork of the repo](https://github.com/chandler767/PubNub-UV-Index-Monitor/tree/push-notifications-ios) follow the 'Setup UVINFO React Native App' instructions above.
-
-3. Provision [APNS and PubNub with tokens](https://www.pubnub.com/docs/web-javascript/mobile-gateway#apns-prerequisites-tokens?devrel_gh=PubNub-UV-Index-Monitor).
-
-4. [Manually link](https://facebook.github.io/react-native/docs/pushnotificationios.html) the PushNotificationIOS library.
-
-5. Install the app on a iOS device to test push notifications.
-
