@@ -154,7 +154,7 @@ react-native run-ios
 
 ### iOS Push Notifications
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-7038.png" height="300">
+<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-7039.png" height="300">
 
 Bridge native PubNub publishing with Apple Push Notification Service for iOS push notifications with React Native. Requires paid enrollment in the [Apple Developer Program](https://developer.apple.com/programs/). Receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours.
 
