@@ -1,19 +1,19 @@
 # UV Index Monitor Powered By [PubNub](https://www.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor )
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="330">
+<img alt="iOS UV INFO App Screenshot" align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6918.JPG" height="330">
 
 Sunburns are terrible for you. The high energy UVB rays from the sun can cause mutations in your genes and a single sunburn is enough to increase your risk for melanoma. As few as five sunburns nearly doubles your risk for melanoma. The damage to your DNA stacks up over time and it's important you use protection when you go outside to mitigate the damage to your skin. Unfortunately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to realize it, painfully, later. What if there was another way? What if you knew when it was safe to be in the open and when to retreat to the shade?
 
 Read the rest of the blog post here: (coming soon).
 
-<img src="https://uvindex.chandlermayo.com/pics/pubnub/pubnub.png" width="450">
+<img alt="How the app connects to PubNub" src="https://uvindex.chandlermayo.com/pics/pubnub/pubnub.png" width="450">
 
 
 ## About
 
 This project uses a UV index sensor and a ESP8266 development board to read the current UV index level and then publishes the UV index value to [PubNub](https://www.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor). A second ESP8266 development board with a RGB LED subscribes to the messages published by the sensor and displays the most recent value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple. A React Native app for iOS and Android shows the last reported or current UV index and the app receives push notifications if the UV index is excessive. Additionally, the app displays a realtime chart of the UV index values powered by [Project EON](https://www.pubnub.com/developers/eon/?devrel_gh=PubNub-UV-Index-Monitor) and hosted on the [GitHub Pages site](https://uvindex.chandlermayo.com/) for this repo.
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="250">
+<img alt="Android UV INFO App Screenshot" align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1531322689.png" height="250">
 
 ### PubNub Features 
 
@@ -25,7 +25,7 @@ This project uses a UV index sensor and a ESP8266 development board to read the 
 
 - [Project EON](https://www.pubnub.com/developers/eon/?devrel_gh=PubNub-UV-Index-Monitor) - Realtime data visualization for UV index.
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="200">
+<img alt="UV index RGB LED indicator" align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-7001.JPG" height="200">
 
 ### Hardware
 
@@ -41,6 +41,8 @@ This project uses a UV index sensor and a ESP8266 development board to read the 
 ## How To Get Started
 
 Want to learn more about this project, how it was built, or get started from scratch? Check out the blog post (coming soon). You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor). Once you sign up, you can get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor).
+
+[<img alt="PubNub Signup" src="https://i.imgur.com/og5DDjf.png" width=260 height=97/>](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor)
 
 ### Setup UV Index Sensor and UV Index Indicator
 
@@ -63,7 +65,7 @@ Want to learn more about this project, how it was built, or get started from scr
 
 #### UV Index Sensor
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/sensor/IMG-6992.JPG" height="250">
+<img align="right" alt="UV index sensor" src="https://uvindex.chandlermayo.com/pics/sensor/IMG-6992.JPG" height="250">
 
 The UV index sensor reads the current UV index levels once per minute and publishes the values to PubNub when the value changes and at least once every 10 minutes.
 
@@ -86,7 +88,7 @@ The UV index sensor reads the current UV index levels once per minute and publis
 
 #### UV Index Indicator
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-6999.JPG" height="200">
+<img alt="UV index RGB LED indicator" align="right" src="https://uvindex.chandlermayo.com/pics/indicator/IMG-6999.JPG" height="200">
 
 The UV Index Indicator subscribes to the 'uvindex' channel and displays the UV index value using color. 0 = off, 1-2 = green, 3-5 = yellow, 6-7 = orange, 8-10 = red, and 11+ = purple.
 
@@ -102,7 +104,7 @@ The UV Index Indicator subscribes to the 'uvindex' channel and displays the UV i
 
 ### Setup Dashboard
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
+<img alt="UV index dashboard" align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6919.JPG" height="250">
 
 The dashboard is powered by [Project EON](https://www.pubnub.com/developers/eon/?devrel_gh=PubNub-UV-Index-Monitor) and shows the last five values from the UV index sensor. To setup your own dashboard you'll need to fork this repo and setup a new gh-pages site. Alternatively, you can host [index.html](https://github.com/chandler767/PubNub-UV-Index-Monitor/blob/gh-pages/index.html) in another location and follow step 3 below to configure. The dashboard for this repo is located here: https://uvindex.chandlermayo.com/ 
 
@@ -125,7 +127,7 @@ git push origin gh-pages
 
 ### Setup UVINFO React Native App
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="330">
+<img alt="iOS UV INFO App Screenshot" align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-6917.JPG" height="330">
 
 When the app is first opened it retrieves the last UV index value and displays that value so the user doesn't have to wait for the sensor to send a new message. Then each time the UV index is updated the app should refresh to display the new value. The app also displays the dashboard chart when the app is in landscape.
 
@@ -154,7 +156,7 @@ react-native run-ios
 
 ### iOS Push Notifications
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-7039.png" height="300">
+<img alt="iOS UV INFO Push Notification" align="right" src="https://uvindex.chandlermayo.com/pics/app/ios/IMG-7039.png" height="300">
 
 Bridge native PubNub publishing with Apple Push Notification Service for iOS push notifications with React Native. Requires paid enrollment in the [Apple Developer Program](https://developer.apple.com/programs/). Receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours.
 
@@ -170,7 +172,7 @@ Bridge native PubNub publishing with Apple Push Notification Service for iOS pus
 
 ### Android Push Notifications
 
-<img align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1532055107.png" height="300">
+<img alt="Android UV INFO Push Notification" align="right" src="https://uvindex.chandlermayo.com/pics/app/android/Screenshot_1532055107.png" height="300">
 
 Bridge native PubNub publishing with Firebase Cloud Messaging for Android push notifications with React Native. Receive push notifications when the UV index is very high (>7) and a maximum of once every 15 hours.
 
