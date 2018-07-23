@@ -78,7 +78,7 @@ void loop() {
         sprintf(msg + strlen(msg), "%d", uvindex);
         if ((uvindex > 7) && (alertTimer == 0)) { // Send a push notification if the UV index is very high and no notification has been sent in the last 15 hours.
           alertTimer = 900; // Wait 15 hours before sending another push notification. 
-          strcat(msg, "},\"pn_gcm\":{\"notification\":{\"body\":\"The UV index is very high. Avoid the sun.\"}}}");
+          strcat(msg, "},\"pn_apns\":{\"aps\":{\"alert\":\"The UV index is very high. Avoid the sun.\"}}}");
         } 
         else {
           if (alertTimer > 0) {
@@ -103,5 +103,3 @@ void loop() {
     }
     delay(1000);
 }
-
-
