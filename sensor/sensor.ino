@@ -32,6 +32,9 @@ void loop() {
       if (sendTimer == 10) { // Reset timer after 10 minutes.
         sendTimer = 0; // Reset timer.
       }
+      if (alertTimer > 0) {
+        alertTimer = (alertTimer - 1); // Remove a minute from the alertTimer.
+      }
       sensorValue = analogRead(A0); // Read sensor. Convert to UV index.
       if ((sensorValue >= 0) && (sensorValue < 20)) {
         uvindex = 0; 
@@ -81,9 +84,6 @@ void loop() {
           strcat(msg, "},\"pn_gcm\":{\"notification\":{\"body\":\"The UV index is very high. Avoid the sun.\"}}}");
         } 
         else {
-          if (alertTimer > 0) {
-            alertTimer = (alertTimer = 1); // Remove a minute from the alertTimer.
-          }
           strcat(msg, "}}");
         }
         client = PubNub.publish("uvindex", msg);
