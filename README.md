@@ -4,7 +4,7 @@
 
 Sunburns are terrible for you. The high energy UVB rays from the sun can cause mutations in your genes, and a single sunburn is enough to increase your risk for melanoma. [As few as five sunburns nearly doubles your risk for melanoma](https://www.skincancer.org/skin-cancer-information/skin-cancer-facts). The damage to your DNA stacks up over time, and it's important you use protection when you go outside to mitigate the damage to your skin. Unfortunately, sunscreen sucks. It’s sticky, oily, and somehow you always manage to miss a spot on your back only to painfully realize it later. What if there were another way? What if you knew when it was safe to be outside in the open and when to retreat to the shade?
 
-Read the rest of the blog post here: (coming soon).
+[Read the rest of the blog post here](https://www.pubnub.com/blog/create-an-arduino-iot-uv-index-monitor-android-ios-push-notifications/?devrel_gh=PubNub-UV-Index-Monitor).
 
 <img alt="How the app connects to PubNub" src="https://uvindex.chandlermayo.com/pics/pubnub/pubnub.png" width="450">
 
@@ -40,7 +40,7 @@ This project uses a UV index sensor and a ESP8266 development board to read the 
 
 ## How To Get Started
 
-Want to learn more about this project, how it was built, or get started from scratch? Check out the blog post (coming soon). You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor). Once you sign up, you can get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor).
+Want to learn more about this project, how it was built, or get started from scratch? [Check out the blog post.](https://www.pubnub.com/blog/create-an-arduino-iot-uv-index-monitor-android-ios-push-notifications/?devrel_gh=PubNub-UV-Index-Monitor) You’ll first need to sign up for a [PubNub account](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor). Once you sign up, you can get your unique PubNub keys from the [PubNub Developer Portal](https://admin.pubnub.com/?devrel_gh=PubNub-UV-Index-Monitor).
 
 [<img alt="PubNub Signup" src="https://i.imgur.com/og5DDjf.png" width=260 height=97/>](https://dashboard.pubnub.com/signup/?devrel_gh=PubNub-UV-Index-Monitor)
 
