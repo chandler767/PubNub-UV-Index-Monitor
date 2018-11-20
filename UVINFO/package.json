@@ -9,7 +9,7 @@
   "dependencies": {
     "pubnub-react": "^1.2.0",
     "react": "^16.4.1",
-    "react-native": "0.56.0"
+    "react-native": "^0.57.5"
   },
   "devDependencies": {
     "babel-preset-react-native": "5.0.2",
